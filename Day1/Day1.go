@@ -14,7 +14,6 @@ func main() {
 	} else {
 		fmt.Printf("A: %d\n", solveA(input, 0));
 		fmt.Printf("B: %d", solveB(input, 0));
-
 	}
 }
 

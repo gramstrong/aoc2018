@@ -13,13 +13,12 @@ func main() {
 	if err != nil {
     log.Fatal(err)
 	} else {
-		fmt.Printf("A: %d\n", solveA(input, 0));
-		fmt.Printf("B: %d", solveB(input, 0));
-
+		fmt.Printf("A: %d\n", solveA(input));
+		fmt.Printf("B: %d", solveB(input));
 	}
 }
 
-func solveA (input []string, init int) (int) {
+func solveA (input []string) (int) {
 	var fabric = map[int]map[int]int{}
 
 	for row := range input {
@@ -64,7 +63,7 @@ func processOverlap(fabric map[int]map[int]int) int {
 	return count;
 }
 
-func solveB (input []string, init int) (int) {
+func solveB (input []string) (int) {
 	var fabric = map[int]map[int]int{}
 
 	for row := range input {

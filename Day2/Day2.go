@@ -11,12 +11,12 @@ func main() {
 	if err != nil {
     log.Fatal(err)
 	} else {
-		fmt.Printf("A: %d\n", solveA(input, 0));
-		fmt.Printf("B: %s", solveB(input, 0));
+		fmt.Printf("A: %d\n", solveA(input));
+		fmt.Printf("B: %s", solveB(input));
 	}
 }
 
-func solveA (input []string, init int) (int) {
+func solveA (input []string) (int) {
 	var dubsSum int = 0
 	var trisSum int = 0
 
@@ -41,7 +41,7 @@ func solveA (input []string, init int) (int) {
 	return dubsSum * trisSum;
 }
 
-func solveB (input []string, init int) (string) {
+func solveB (input []string) (string) {
 	for i := range input{
 		for j := range input {
 			var numDiff int = 0;
