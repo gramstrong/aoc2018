@@ -22,6 +22,6 @@ func Read (path string) ([]string, error) {
 
 func RemoveCharAtIndex(in string, i int) string {
   out := []rune(in)
-  out[i] = rune(0)
+  out = append(out[:i], out[i+1:]...)
   return string(out)
 }
