@@ -20,6 +20,18 @@ func Read (path string) ([]string, error) {
   return lines, scanner.Err()
 }
 
+func Write (path string, output string) error {
+  file, err := os.OpenFile(path, os.O_RDWR|os.O_APPEND, 0660)
+  if err != nil {
+    return err
+  }
+  defer file.Close()
+
+  _, err = file.WriteString(output)
+
+  return err
+}
+
 func RemoveCharAtIndex(in string, i int) string {
   out := []rune(in)
   out = append(out[:i], out[i+1:]...)
